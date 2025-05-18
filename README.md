@@ -26,18 +26,6 @@ For the complete list of dependencies, see the `requirements.txt` file.
 Set the `GRB_LICENSE_FILE` environment variable to the path of your Gurobi license file. Without this, Gurobi will run in a limited capacity.
 
 ### Usage
-To use WMI-LP, follow these steps:
-
-1. Run the WMI-LP command:
-    ```
-    wmilp -i WMI-LP/examples/one_over_x.json --max-workers 16 --epsilon 0.1
-    ```
-
-    - `-i`: Specifies the input file.
-    - `--max-workers`: Sets the maximum number of worker threads.
-    - `--epsilon`: Defines the precision parameter.
-
-### CLI Example
 Use WMI-LP to compute the weighted model integration of `1/x` over `[0.1, 1]` with an epsilon of `0.1`:
 ```
 wmilp -i WMI-LP/examples/one_over_x.json --max-workers 16 --epsilon 0.1
