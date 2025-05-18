@@ -1,0 +1,11 @@
+LICENSE
+README.rst
+setup.py
+bin/wmilp
+wmilp/__init__.py
+wmilp/wmilp.py
+wmilp.egg-info/PKG-INFO
+wmilp.egg-info/SOURCES.txt
+wmilp.egg-info/dependency_links.txt
+wmilp.egg-info/requires.txt
+wmilp.egg-info/top_level.txt

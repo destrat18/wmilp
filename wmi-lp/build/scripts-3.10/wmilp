@@ -1,0 +1,33 @@
+#!python
+import argparse, json, logging
+from wmilp import calculate_approximate_volume, calculate_approximate_wmi
+
+
+
+if __name__ == "__main__":
+    
+    
+    parser = argparse.ArgumentParser(
+        description="LP-Based Weighted Model Integration over Non-Linear Real Arithmetic",
+        prog="WMI-LP"
+    )
+    parser.add_argument("--epsilon", type=float, help="epsilon", default=0.1)
+    parser.add_argument("--max-workers", type=int, help="Number of parallel solvers", default=1)
+    parser.add_argument("--input", '-i', '-f', "--file", type=str, help="Path to input file")
+    
+    args = parser.parse_args()
+    
+    with open(args.input, 'r') as f:
+        try:
+            instance = json.load(f)
+            calculate_approximate_wmi(
+                max_workers=args.max_workers,
+                epsilon=args.epsilon,
+                w=instance['w'],
+                variables=instance['variables'],
+                bounds=instance['bounds'],
+                S=instance['S']
+            )
+        except Exception as e:
+            logging.exception(e)
+         
